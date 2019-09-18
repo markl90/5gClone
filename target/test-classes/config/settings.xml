@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+    <!-- SONAR PLUGIN MAVEN -->
+    <pluginGroups>
+        <pluginGroup>org.sonarsource.scanner.maven</pluginGroup>
+    </pluginGroups>
+    <profiles>
+        <!-- SONAR PLUGIN MAVEN -->
+        <profile>
+            <id>sonar</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>                
+                <sonar.host.url>
+                  http://34.244.7.87:80
+                </sonar.host.url>
+            </properties>
+        </profile>
+        <!-- #####################-->
+        <profile>
+            <id>netbuilder</id>
+            <repositories>
+                <repository>
+                    <id>nbd-nexus</id>
+                    <name>NETbuilder Artifact Nexus</name>
+                    <url>https://artifact.netbuilderdelivery.com/content/groups/public</url>
+                    <releases>
+                        <enabled>true</enabled>
+                        <updatePolicy>always</updatePolicy>
+                        <checksumPolicy>warn</checksumPolicy>
+                    </releases>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>nbd-nexus</id>
+                    <name>NETbuilder Artifact Nexus</name>
+                    <url>https://artifact.netbuilderdelivery.com/content/groups/public</url>
+                    <releases>
+                        <enabled>true</enabled>
+                        <updatePolicy>always</updatePolicy>
+                        <checksumPolicy>warn</checksumPolicy>
+                    </releases>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
+        <profile>
+            <id>bt-business</id>
+            <repositories>
+                <repository>
+                    <id>btb-nexus</id>
+                    <name>BTB Online Nexus</name>
+                    <url>https://repo.btbonline.co.uk/nexus/content/groups/public</url>
+                    <releases>
+                        <enabled>true</enabled>
+                        <updatePolicy>always</updatePolicy>
+                        <checksumPolicy>warn</checksumPolicy>
+                    </releases>
+                </repository>
+                <repository>
+                    <id>btb-nexus-proxied-customer-releases</id>
+                    <name>BTB Online Nexus (NETbuilder Customer Releases)</name>
+                    <url>https://repo.btbonline.co.uk/nexus/content/repositories/netbuilder</url>
+                    <releases>
+                        <enabled>true</enabled>
+                        <updatePolicy>always</updatePolicy>
+                        <checksumPolicy>warn</checksumPolicy>
+                    </releases>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>btb-nexus</id>
+                    <name>BTB Online Nexus</name>
+                    <url>https://repo.btbonline.co.uk/nexus/content/groups/public</url>
+                    <releases>
+                        <enabled>true</enabled>
+                        <updatePolicy>always</updatePolicy>
+                        <checksumPolicy>warn</checksumPolicy>
+                    </releases>
+                </pluginRepository>
+                <pluginRepository>
+                    <id>btb-nexus-proxied-customer-releases</id>
+                    <name>BTB Online Nexus (NETbuilder Customer Releases)</name>
+                    <url>https://repo.btbonline.co.uk/nexus/content/repositories/netbuilder</url>
+                    <releases>
+                        <enabled>true</enabled>
+                        <updatePolicy>always</updatePolicy>
+                        <checksumPolicy>warn</checksumPolicy>
+                    </releases>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
+
+        <profile>
+	            <id>adobe-public</id>
+
+	            <activation>
+	                <activeByDefault>false</activeByDefault>
+	            </activation>
+
+	            <properties>
+	                <releaseRepository-Id>adobe-public-releases</releaseRepository-Id>
+	                <releaseRepository-Name>Adobe Public Releases</releaseRepository-Name>
+	                <releaseRepository-URL>https://repo.adobe.com/nexus/content/groups/public</releaseRepository-URL>
+	            </properties>
+
+	            <repositories>
+	                <repository>
+	                    <id>adobe-public-releases</id>
+	                    <name>Adobe Public Repository</name>
+	                    <url>https://repo.adobe.com/nexus/content/groups/public</url>
+	                    <releases>
+	                        <enabled>true</enabled>
+	                        <updatePolicy>never</updatePolicy>
+	                    </releases>
+	                    <snapshots>
+	                        <enabled>false</enabled>
+	                    </snapshots>
+	                </repository>
+	            </repositories>
+
+	            <pluginRepositories>
+	                <pluginRepository>
+	                    <id>adobe-public-releases</id>
+	                    <name>Adobe Public Repository</name>
+	                    <url>https://repo.adobe.com/nexus/content/groups/public</url>
+	                    <releases>
+	                        <enabled>true</enabled>
+	                        <updatePolicy>never</updatePolicy>
+	                    </releases>
+	                    <snapshots>
+	                        <enabled>false</enabled>
+	                    </snapshots>
+	                </pluginRepository>
+	            </pluginRepositories>
+	        </profile>
+    </profiles>
+    <activeProfiles>
+        <!-- <activeProfile>adobe-public</activeProfile> -->
+        <activeProfile>netbuilder</activeProfile>
+        <!-- <activeProfile>bt-business</activeProfile> -->
+    </activeProfiles>
+    <servers>
+        <server>
+            <id>nbd-nexus</id>
+            <username>developer</username>
+            <password>aTBj!BsBt582_dVC</password>
+        </server>
+		<server>
+            <id>nbd-nexus-deploy</id>
+            <username>deploy</username>
+            <password>LQB?3SB)9g~tbJ6?</password>
+        </server>
+        <server>
+            <id>btb-nexus</id>
+            <username>developer</username>
+            <password>IonSo8Zq4H7a</password>
+        </server>
+        <server>
+            <id>btb-nexus-proxied-customer-releases</id>
+            <username>developer</username>
+            <password>IonSo8Zq4H7a</password>
+        </server>
+    </servers>
+</settings>
+
